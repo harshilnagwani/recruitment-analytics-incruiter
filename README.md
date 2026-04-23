@@ -6,6 +6,7 @@
 ![SQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
+![Records](https://img.shields.io/badge/Dataset-1%2C500%20Records-blue?style=for-the-badge)
 
 **Role Simulated:** Business Analyst @ InCruiter &nbsp;|&nbsp; **Tool:** Microsoft Excel + SQL &nbsp;|&nbsp; **Dataset:** Kaggle (1,500 rows)
 
@@ -23,19 +24,72 @@ Simulate the analytical responsibilities of a **Business Analyst at InCruiter** 
 
 ---
 
+## 📸 Dashboard Preview
+
+### Main Dashboard (KPIs + Charts + Slicers)
+> *3 KPI cards • Funnel chart • Source effectiveness bar chart • Avg Days to Offer line chart • 3 cross-filters*
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Analysis Sheet (Pivot Tables + Scorecard)
+> *Funnel drop-off table • Source effectiveness pivot • Channel productivity scorecard*
+
+![Analysis](docs/screenshots/analysis.png)
+
+---
+
+## 🚦 Live KPI Results (Full Dataset — 1,500 Records)
+
+| KPI | Value | Target | Status |
+|---|---|---|---|
+| 🟢 **Offer-to-Join Rate** | **31%** | ≥ 65% | 🔴 Below Target |
+| 🟡 **Avg Days to Offer** | **29.33 days** | ≤ 25 days | 🟡 Needs Improvement |
+| 🔵 **Avg Interview Score (Hired)** | **56.8 / 100** | ≥ 75 | 🔴 Below Target |
+
+> **Insight:** All three KPIs are underperforming against targets — signalling systemic issues in screening quality and offer conversion. See Key Insights below for root-cause analysis.
+
+---
+
+## 📉 Recruitment Funnel (Full Pipeline)
+
+| Stage | Candidates | % of Total |
+|---|---|---|
+| 🔴 Dropped at Screening | **553** | 36.87% |
+| 🟡 Dropped at Interview | **197** | 13.13% |
+| 🟠 Dropped at Offer | **285** | 19.00% |
+| 🟢 Joined | **465** | 31.00% |
+| **Total** | **1,500** | 100% |
+
+> **Biggest drop-off: Screening stage (37%)** — over 1 in 3 candidates never reach an interview.
+
+---
+
+## 📊 Source Effectiveness
+
+| Source | Total Apps | Hires | Hire Rate % | Avg Days to Offer | Avg Interview Score |
+|---|---|---|---|---|---|
+| LinkedIn (1) | 445 | 319 | **71.69%** | ~15 days | 51.40 |
+| Referral (2) | 770 | 105 | 13.64% | ~18 days | 49.14 |
+| Job Board (3) | 285 | 41 | 14.39% | ~35 days | 53.11 |
+
+> **LinkedIn dominates hire volume** (319 of 465 hires = 68.6%) despite smaller app count vs. Referral.  
+> **Job Board is slowest** — ~35 avg days to offer vs. 15 for LinkedIn.
+
+---
+
 ## 🔑 Key Business Insights
 
-### 💡 Insight 1 — Referral Hires Are ~40% Faster
-> Referral-sourced candidates reach offer stage in **~18 days** vs. **~35 days** for Job Board hires.  
-> **Recommendation:** Increase referral bonus budget; target 30% referral hires per quarter.
+### 💡 Insight 1 — LinkedIn Is the Highest-Converting Channel
+> LinkedIn converts **71.7% of applications to hires** — nearly 5× the rate of Referral (13.6%) and Job Board (14.4%).  
+> **Recommendation:** Maintain LinkedIn spend; optimise JD targeting to sustain quality while growing volume.
 
-### 💡 Insight 2 — 37% of Pipeline Drops at Screening
-> 553 out of 1,500 candidates exit at the Screening stage — the **single largest drop-off point**.  
-> **Recommendation:** Add pre-screening ATS questions; revise JDs to attract better-qualified applicants.
+### 💡 Insight 2 — 37% of Pipeline Drops at Screening (Largest Single Loss)
+> 553 out of 1,500 candidates exit at Screening — before any interview is even conducted.  
+> **Recommendation:** Add mandatory pre-screening questions in ATS; revise JDs to filter mismatched applicants earlier.
 
-### 💡 Insight 3 — LinkedIn Drives Volume, Referral Drives Quality
-> LinkedIn: ~503 apps @ 29% hire rate vs. Referral: ~523 apps @ **higher hire rate + better scores**.  
-> **Recommendation:** Reallocate 15% of LinkedIn spend to employee referral incentives.
+### 💡 Insight 3 — Job Board Is 2× Slower Than LinkedIn
+> Job Board hires take ~35 days to offer vs. ~15 days for LinkedIn — a **133% speed gap**.  
+> **Recommendation:** Reduce Job Board budget; redirect to LinkedIn and re-evaluate Referral programme incentives for quality improvement.
 
 ---
 
@@ -44,43 +98,55 @@ Simulate the analytical responsibilities of a **Business Analyst at InCruiter** 
 ```
 recruitment-analytics-incruiter/
 │
-├── 📊 recruitment_data.xlsx          ← Main Excel workbook (dashboard + data)
+├── 📊 recruitment_data.xlsx          ← Main Excel workbook (5 sheets)
 ├── 📄 recruitment_data_clean.csv     ← Clean 1,500-row dataset (18 columns)
 ├── 🗄️ recruitment_analysis.sql       ← Full SQL analysis (8 query sections)
-├── 📋 Documentation_Pack.xlsx        ← SOP + Data Dictionary + Impact Summary
-└── 📝 README.md                      ← This file
+├── 📁 docs/
+│   ├── SOP_Dashboard_Refresh.md     ← 1-page monthly refresh SOP
+│   ├── Data_Dictionary.md           ← 18-column definitions + KPI logic
+│   └── screenshots/                 ← Dashboard preview images
+└── 📝 README.md                     ← This file
 ```
 
 ---
 
 ## 📊 Excel Dashboard Features
 
-| Feature | Description |
+| Feature | Detail |
 |---|---|
-| 🔽 **3 Slicers** | Filter entire dashboard by Source, Month, and Hiring Decision |
-| 📉 **Funnel Chart** | Drop-off at each stage: Screening → Interview → Offer → Joined |
-| 📊 **Bar Chart** | Applications vs. Hires by recruitment channel |
-| 📈 **Line Chart** | Monthly average time-to-offer trend (Jan–Jun 2024) |
-| 🚦 **Traffic Light KPIs** | Offer-to-Join Rate, Avg Days to Offer, Avg Interview Score |
-| 🎨 **Conditional Formatting** | Color scales on recruiter productivity scorecard |
+| 🔽 **Slicer 1 — RecruitmentStrategy** | Filter by LinkedIn (1), Referral (2), Job Board (3) |
+| 🔽 **Slicer 2 — Month** | Filter by Jan-2024, Feb-2024, … (timeline control) |
+| 🔽 **Slicer 3 — HiringDecision** | Filter by Hired (1) or Not Hired (0) |
+| 📉 **Funnel Bar Chart** | Horizontal bars: Screening → Interview → Offer → Joined (with counts) |
+| 📊 **Source Effectiveness Chart** | Grouped bar: Total Apps vs. Hires vs. Hire Rate % by channel |
+| 📈 **Avg Days to Offer Line Chart** | Monthly trend of time-to-offer (PivotChart, slicer-connected) |
+| 🚦 **3 Traffic Light KPIs** | Offer-to-Join Rate • Avg Days to Offer • Avg Interview Score |
+| 🎨 **Conditional Formatting** | Color scales (green/amber/red) on channel scorecard |
+
+**Workbook Sheets:**
+1. `Dashboard` — Interactive KPI + charts view
+2. `Raw_Data` — All 1,500 records with 18 columns
+3. `Analysis` — Pivot tables: funnel, source effectiveness, scorecard
+4. `Documentation_Pack` — SOP + Data Dictionary + Impact summary
+5. `GitHub_README_Preview` — README content reference
 
 ---
 
 ## 🗄️ SQL Analysis (recruitment_analysis.sql)
 
-The SQL file contains **8 fully commented query sections** for MySQL/PostgreSQL:
+**8 fully commented query sections** for MySQL / PostgreSQL:
 
-| Section | Queries |
+| Section | Covers |
 |---|---|
-| 0. Schema Setup | `CREATE TABLE` with all 18 columns |
-| 1. Data Quality | Null checks, value validation, range checks |
-| 2. Funnel Analysis | Drop-off count, % per stage, conversion rates |
-| 3. Source Effectiveness | Hire rate, avg days, composite quality score per channel |
-| 4. Time-to-Hire Trend | Monthly avg days to offer + by source |
-| 5. Recruiter Scorecard | Full productivity metrics per channel |
-| 6. KPI Summary | Overall pipeline health snapshot |
-| 7. Candidate Profiles | Hired vs. not-hired comparison by education & experience |
-| 8. Advanced Queries | Top missed hires, quality risks, cumulative hires, gap analysis |
+| 0. Schema Setup | `CREATE TABLE` with all 18 columns + CSV import instructions |
+| 1. Data Quality | Null checks, value validation, negative days check |
+| 2. Funnel Analysis | Drop-off count + % per stage, stage conversion rates |
+| 3. Source Effectiveness | Hire rate, avg days to offer, composite quality score per channel |
+| 4. Time-to-Hire Trend | Monthly avg days to offer, by source × month breakdown |
+| 5. Recruiter Scorecard | Full productivity metrics: pipeline, hires, speed, drop-off per channel |
+| 6. KPI Summary | Overall pipeline health snapshot (single query output) |
+| 7. Candidate Profiles | Hired vs. not-hired by education level and experience band |
+| 8. Advanced Queries | Top 10 missed hires, running cumulative hires, Referral vs. Job Board gap proof |
 
 ---
 
@@ -90,10 +156,10 @@ The SQL file contains **8 fully commented query sections** for MySQL/PostgreSQL:
 |---|---|
 | **Excel** | PivotTables, PivotCharts, Slicers, Named Ranges, Data Validation |
 | **Excel Formulas** | IF, TEXT, COUNTIF, COUNTIFS, AVERAGEIF, SUMPRODUCT, RANDBETWEEN |
-| **Conditional Formatting** | Traffic lights (CellIsRule), Color scales, Icon sets |
-| **SQL** | DDL, aggregations, CASE WHEN, window functions, subqueries, UNION |
-| **Data Engineering** | 7 derived columns: date offsets, funnel logic, month bucketing |
-| **Documentation** | SOP (1-page), Data Dictionary (18 cols), Business Impact Summary |
+| **Conditional Formatting** | CellIsRule (traffic lights), ColorScaleRule, Icon Sets |
+| **SQL** | DDL, GROUP BY aggregations, CASE WHEN, window functions (SUM OVER), UNION ALL, subqueries |
+| **Data Engineering** | 7 derived columns: date simulation, funnel logic, channel-based time offsets, month bucketing |
+| **Documentation** | 1-page SOP, 18-column Data Dictionary, Business Impact README, 5 XYZ resume bullets |
 
 ---
 
@@ -124,40 +190,48 @@ The SQL file contains **8 fully commented query sections** for MySQL/PostgreSQL:
 
 ---
 
+## 💼 Resume Bullets (XYZ Format)
 
+- Designed a **5-sheet interactive Excel recruitment dashboard** tracking 1,500 candidates across 4 pipeline stages; identified a **37% screening drop-off** (553 candidates) that informed a JD revision recommendation to HR leadership.
+- Built **7 derived KPI columns** using IF, COUNTIFS, TEXT, and RANDBETWEEN formulas, reducing estimated manual reporting effort by **~4 hrs/month**.
+- Uncovered that **LinkedIn converts at 71.7%** vs. Job Board at 14.4%, and Job Board is **2× slower** (35 vs. 15 avg. days to offer) — insights presented via 3 slicer-connected PivotCharts.
+- Implemented **3 cross-filtered slicers** (Source, Month, Hiring Decision) and traffic-light conditional formatting on 3 live KPIs, enabling one-click filtering for non-technical HR stakeholders.
+- Authored a **1-page monthly SOP**, 18-column **Data Dictionary**, and **8-section SQL analysis script** covering funnel analytics, source effectiveness, candidate profiling, and advanced window function queries.
+
+---
 
 ## 🚀 How to Run
 
 **Excel Dashboard:**
 1. Open `recruitment_data.xlsx`
 2. Enable editing + content if prompted
-3. Use the slicers on the Dashboard sheet to filter by Source / Month / Hiring Decision
+3. Go to the `Dashboard` sheet — use the 3 slicers to filter by Source / Month / Hiring Decision
 
 **SQL Queries:**
 ```sql
--- 1. Create the table
-source recruitment_analysis.sql;   -- MySQL
--- or \i recruitment_analysis.sql  -- PostgreSQL
+-- Step 1: Create schema
+SOURCE recruitment_analysis.sql;    -- MySQL
+-- or: \i recruitment_analysis.sql  -- PostgreSQL
 
--- 2. Load data
-LOAD DATA INFILE 'recruitment_data_clean.csv'
+-- Step 2: Load CSV data
+LOAD DATA INFILE '/path/to/recruitment_data_clean.csv'
 INTO TABLE recruitment_data
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
--- 3. Run any section query
+-- Step 3: Run any section (Sections 1–8 are independently executable)
 ```
 
 ---
 
 ## 👤 Author
 
-**Harshil Nagwani** — Data Analyst | CS Final Year  
-📧 harshil.nagwani22@gmail.com  
-🌐 [harshilnagwani.github.io](https://harshilnagwani.github.io)  
-💼 [LinkedIn](https://linkedin.com/in/harshilnagwani)  
+**Harshil Nagwani** — Data Analyst | CS Final Year
+📧 harshil.nagwani22@gmail.com
+🌐 [harshilnagwani.github.io](https://harshilnagwani.github.io)
+💼 [LinkedIn](https://linkedin.com/in/harshilnagwani)
 🐙 [GitHub](https://github.com/harshilnagwani)
 
 ---
