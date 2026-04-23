@@ -124,15 +124,7 @@ The SQL file contains **8 fully commented query sections** for MySQL/PostgreSQL:
 
 ---
 
-## 💼 Resume Bullets (XYZ Format)
 
-- Designed a **5-sheet interactive Excel recruitment dashboard** tracking 1,500 candidates across 4 pipeline stages, identifying a **37% screening drop-off** that supported a JD revision recommendation.
-- Built **7 derived KPI columns** using advanced Excel formulas (IF, COUNTIFS, TEXT, RANDBETWEEN), reducing estimated manual reporting effort by **~4 hrs/month**.
-- Identified Referral hires are **40% faster** than Job Board hires (18 vs. 35 avg. days to offer) via source × time-to-hire pivot — directly informing a **referral programme investment proposal**.
-- Implemented **3 cross-filtered slicers** and traffic-light conditional formatting on 3 KPIs, enabling one-click insight extraction for non-technical HR stakeholders.
-- Authored a **1-page SOP**, 18-column **Data Dictionary**, and **8-section SQL analysis script** covering funnel analytics, source effectiveness, and candidate profiling.
-
----
 
 ## 🚀 How to Run
 
