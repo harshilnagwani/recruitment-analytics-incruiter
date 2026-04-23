@@ -190,15 +190,7 @@ recruitment-analytics-incruiter/
 
 ---
 
-## 💼 Resume Bullets (XYZ Format)
 
-- Designed a **5-sheet interactive Excel recruitment dashboard** tracking 1,500 candidates across 4 pipeline stages; identified a **37% screening drop-off** (553 candidates) that informed a JD revision recommendation to HR leadership.
-- Built **7 derived KPI columns** using IF, COUNTIFS, TEXT, and RANDBETWEEN formulas, reducing estimated manual reporting effort by **~4 hrs/month**.
-- Uncovered that **LinkedIn converts at 71.7%** vs. Job Board at 14.4%, and Job Board is **2× slower** (35 vs. 15 avg. days to offer) — insights presented via 3 slicer-connected PivotCharts.
-- Implemented **3 cross-filtered slicers** (Source, Month, Hiring Decision) and traffic-light conditional formatting on 3 live KPIs, enabling one-click filtering for non-technical HR stakeholders.
-- Authored a **1-page monthly SOP**, 18-column **Data Dictionary**, and **8-section SQL analysis script** covering funnel analytics, source effectiveness, candidate profiling, and advanced window function queries.
-
----
 
 ## 🚀 How to Run
 
