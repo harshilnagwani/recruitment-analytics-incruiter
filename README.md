@@ -1,4 +1,4 @@
-# 📊 Recruitment Analytics Dashboard — InCruiter BA Project
+# 📊 Recruitment Analytics Dashboard 
 
 <div align="center">
 
